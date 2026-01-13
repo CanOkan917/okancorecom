@@ -1,13 +1,80 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>okancorecom</title>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Okancore — Software Engineer Portfolio</title>
+    <meta
+            name="description"
+            content="Okancore is a software engineer portfolio focused on real-world applications, clean code, and production-ready systems."
+    />
+    <meta name="keywords"
+          content="software engineer, portfolio, web applications, clean code, system design, okancore"/>
+    <meta name="author" content="Okancore"/>
+    <meta name="robots" content="index,follow"/>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.okancore.com/"/>
+
+    <!-- Language + alternate (optional if you keep separate pages/paths) -->
+<!--    <link rel="alternate" hreflang="en" href="https://www.okancore.com/"/>-->
+<!--    <link rel="alternate" hreflang="tr" href="https://www.okancore.com/tr"/>-->
+    <link rel="alternate" hreflang="x-default" href="https://www.okancore.com/"/>
+
+    <!-- Favicon / App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#020617"/>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Okancore"/>
+    <meta property="og:title" content="Okancore — Software Engineer Portfolio"/>
+    <meta
+            property="og:description"
+            content="Real-world applications. Clean, maintainable code. Production-ready systems."
+    />
+    <meta property="og:url" content="https://www.okancore.com/"/>
+    <meta property="og:image" content="https://www.okancore.com/og/okancore.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Okancore — Software Engineer Portfolio"/>
+    <meta
+            name="twitter:description"
+            content="Real-world applications. Clean, maintainable code. Production-ready systems."
+    />
+    <meta name="twitter:image" content="https://www.okancore.com/og/okancore.jpg"/>
+
+    <!-- Performance: preconnect (optional) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Okancore",
+            "url": "https://www.okancore.com/",
+            "jobTitle": "Software Engineer",
+            "sameAs": [],
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Okancore"
+            }
+        }
+    </script>
+</head>
+<body>
+    <noscript>This website requires JavaScript to run.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+</body>
 </html>
