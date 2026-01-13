@@ -1,73 +1,99 @@
-# React + TypeScript + Vite
+# 🚀 Okancore | Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Project Status](https://img.shields.io/badge/status-active-success)
+![Build](https://img.shields.io/badge/build-vite-646cff)
+![Tech](https://img.shields.io/badge/stack-react%20%7C%20typescript-blue)
 
-Currently, two official plugins are available:
+This repository contains the source code for my personal portfolio website, **[okancore.com](https://okancore.com)**. It showcases my projects, professional experience, and technical skills as a Software Engineer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project is built with a focus on performance, clean architecture, and modern UI/UX principles using **Vite** and **React**.
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Modern UI/UX:** Glassmorphism effects, gradient borders, and smooth transitions.
+* **Responsive Design:** Fully optimized for mobile, tablet, and desktop devices.
+* **Interactive Components:**
+    * Custom Image Gallery with Zoom & Keyboard navigation (Swiper.js).
+    * Testimonial Slider.
+    * Smooth scrolling navigation with Active State detection.
+* **Dark Mode:** Default dark theme with neon accents (Cyan/Purple).
+* **Performance:** High-performance static build using Vite.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Core:** [React](https://reactjs.org/) (v19), [TypeScript](https://www.typescriptlang.org/)
+* **Build Tool:** [Vite](https://vitejs.dev/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Routing:** [React Router DOM](https://reactrouter.com/)
+* **Icons:** [Lucide React](https://lucide.dev/)
+* **Animations/Sliders:** [Swiper.js](https://swiperjs.com/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ⚙️ Installation & Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/canokan917/okancore-portfolio.git
+    cd okancore-portfolio
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Run development server**
+    ```bash
+    npm run dev
+    ```
+    Open `http://localhost:5173` to view it in the browser.
+
+## 📦 Building for Production
+
+To create a production-ready build:
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will generate a `dist` folder containing the optimized static assets (HTML, CSS, JS).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Deployment (Apache / cPanel)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Since this is a Single Page Application (SPA) built with Vite, special configuration is needed for Apache servers (standard cPanel hosting) to handle client-side routing.
+
+1.  Upload the contents of the `dist` folder to your `public_html`.
+2.  Create/Edit the `.htaccess` file in the root directory with the following content to prevent 404 errors on page refresh:
+
+```apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>
 ```
+
+## 📂 Project Structure
+
+```bash
+src/
+├── assets/          # Static images and icons
+├── components/      # Reusable UI components (Navbar, Footer, SectionTitle)
+├── pages/           # Page views (Home, About, Privacy, Terms)
+├── styles/          # Global styles and Tailwind directives
+├── App.tsx          # Main application component
+└── main.tsx         # Entry point
+```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<p align="center">
+  Built with ❤️ by <a href="[https://okancore.com](https://okancore.com)">Can Okan</a>
+</p>
