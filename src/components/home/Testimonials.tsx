@@ -32,28 +32,8 @@ const testimonialsData: Testimonial[] = [
         quote: "Working with Okancore meant clean code, clear communication, and a system that was ready for production from day one.",
         image: "/assets/testimonials/dbarisejderoglu.jpeg",
     },
-    /*{
-        id: 2,
-        name: "Deniz ÖNER",
-        position: "Frontend Designer",
-        quote:
-            "The collaboration was smooth and highly technical. Decisions were always backed by solid engineering reasoning.",
-        image: "/assets/testimonials/denizoner.jpg",
-    },*/
     {
-        id: 3,
-        name: "Artun HAZER",
-        position: "Frontend Designer",
-        company: {
-            name: "Tentunit",
-            url: "https://www.tentunit.com"
-        },
-        quote:
-            "I have known Can Okan for a long time. He is a highly disciplined professional who takes his work very seriously. He is responsible, reliable, and a trusted individual who fulfills his duties with great care and attention to detail.",
-        image: "/assets/testimonials/artunhazer.jpeg",
-    },
-    /*{
-        id: 4,
+        id: 2,
         name: "Kayra KANPOLAT",
         position: "CEO",
         company: {
@@ -61,9 +41,30 @@ const testimonialsData: Testimonial[] = [
             url: "https://www.tentunit.com"
         },
         quote:
-            "Probably the most seamless integration process we've ever had. The attention to detail in the backend logic was outstanding.",
+            "Can is incredibly great to work with. Clear, reliable, and detail-oriented. His technical expertise consistently turns complex requirements into clean, scalable solutions, and he genuinely thinks about the product beyond just execution.",
         image: "/assets/testimonials/kayrakanpolat.jpg",
-    },*/
+    },
+    // {
+    //     id: 3,
+    //     name: "Deniz ÖNER",
+    //     position: "Frontend Designer",
+    //     quote:
+    //         "The collaboration was smooth and highly technical. Decisions were always backed by solid engineering reasoning.",
+    //     image: "/assets/testimonials/denizoner.jpg",
+    // },
+    {
+        id: 4,
+        name: "Artun HAZER",
+        position: "Frontend Developer",
+        company: {
+            name: "Tentunit",
+            url: "https://www.tentunit.com"
+        },
+        quote:
+            "I have known Can for a long time. He is a highly disciplined professional who takes his work very seriously. He is responsible, reliable, and a trusted individual who fulfills his duties with great care and attention to detail.",
+        image: "/assets/testimonials/artunhazer.jpeg",
+    },
+
 ];
 
 const Testimonials: React.FC = () => {
@@ -82,7 +83,7 @@ const Testimonials: React.FC = () => {
                     subtitle="Feedback from people I’ve worked with on real-world projects."
                 />
 
-                <div className="mt-12 max-w-7xl mx-auto">
+                <div className="mt-12 max-w-7xl mx-auto [&_.swiper-pagination-bullet]:bg-slate-600 [&_.swiper-pagination-bullet-active]:bg-cyan-500">
                     <Swiper
                         modules={[Autoplay]}
                         spaceBetween={24}
@@ -99,12 +100,12 @@ const Testimonials: React.FC = () => {
                             768: { slidesPerView: 2, spaceBetween: 24 },
                             1024: { slidesPerView: 3, spaceBetween: 24 },
                         }}
+                        className="pb-12"
                     >
                         {testimonialsData.map((item) => (
-                            <SwiperSlide key={item.id} className="h-auto pt-2 pl-2 pr-2">
-
+                            <SwiperSlide key={item.id} className="!h-auto pt-2 pl-2 pr-2 pb-2">
                                 <div className="group h-full rounded-2xl p-[1px] bg-gradient-to-b from-slate-700/60 via-slate-800/30 to-slate-900/60 hover:from-cyan-500/40 hover:to-purple-500/30 transition-colors">
-                                    <div className="relative h-full rounded-2xl bg-slate-950/40 border border-slate-800/70 backdrop-blur-xl p-8 flex flex-col min-h-[320px]">
+                                    <div className="relative h-full rounded-2xl bg-slate-950/40 border border-slate-800/70 backdrop-blur-xl p-8 flex flex-col">
 
                                         {/* Tırnak işareti */}
                                         <div className="absolute top-5 right-6 text-slate-700/40 text-6xl font-serif leading-none select-none group-hover:text-cyan-500/10 transition-colors">
@@ -118,7 +119,7 @@ const Testimonials: React.FC = () => {
                                             ))}
                                         </div>
 
-                                        {/* Yorum */}
+                                        {/* Yorum  */}
                                         <p className="text-slate-200/90 text-sm md:text-base leading-relaxed flex-1">
                                             {item.quote}
                                         </p>
@@ -142,7 +143,7 @@ const Testimonials: React.FC = () => {
                                                 <div className="text-xs text-slate-400 mt-1 truncate">
                                                     {item.position}
                                                     {item.company && (
-                                                        <> · <a href={item.company.url} target={"_blank"} className="text-slate-500 hover:underline">{item.company.name}</a></>
+                                                        <> · <a href={item.company.url} target={"_blank"} rel="noreferrer" className="text-slate-500 hover:text-cyan-400 hover:underline transition-colors">{item.company.name}</a></>
                                                     )}
                                                 </div>
                                             </div>
