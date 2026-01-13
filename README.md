@@ -32,8 +32,8 @@ The project is built with a focus on performance, clean architecture, and modern
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/canokan917/okancore-portfolio.git
-    cd okancore-portfolio
+    git clone https://github.com/canokan917/okancorecom.git
+    cd okancorecom
     ```
 
 2.  **Install dependencies**
@@ -80,10 +80,8 @@ Since this is a Single Page Application (SPA) built with Vite, special configura
 
 ```bash
 src/
-├── assets/          # Static images and icons
 ├── components/      # Reusable UI components (Navbar, Footer, SectionTitle)
 ├── pages/           # Page views (Home, About, Privacy, Terms)
-├── styles/          # Global styles and Tailwind directives
 ├── App.tsx          # Main application component
 └── main.tsx         # Entry point
 ```
